@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full bg-white">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,7 @@
 
     <title>Document</title>
 </head>
-<body>
+<body class="h-full">
 <h1 class="text-3xl font-bold underline">
     Aa Bb Cc Yy Zz
   </h1>
