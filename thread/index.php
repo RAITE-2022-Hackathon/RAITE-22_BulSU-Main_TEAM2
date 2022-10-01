@@ -1,17 +1,22 @@
 <?php
 require_once "../api/database.php";
 require_once "../api/session.php";
-if (!isset($_GET["user"]))
-    die("User not defined.");
-$userID = sanitize($_GET["user"]);
-if (strlen($userID) == 0)
-    die("User not defined.");
-$user = query("SELECT * FROM users WHERE AccountID='$userID'");
-if (numrows($user) == 0)
-    die("User not found.");
-$user = fetch($user);
-$followers = query("SELECT * FROM following WHERE User='$userID'");
-$following = query("SELECT * FROM following WHERE Following='$userID'");
+if (!isset($_GET["id"]))
+    die("Thread not defined.");
+$threadID = sanitize($_GET["id"]);
+if (strlen($threadID) == 0)
+    die("Thread not defined.");
+
+$thread = query("SELECT * FROM posts WHERE PostID='$threadID'");
+if (numrows($thread) == 0)
+    die("Thread not found.");
+$thread = fetch($thread);
+$q = query("SELECT Username FROM users WHERE AccountID='".$thread["AccountID"]."' ");
+$authorName = fetch($q)["Username"];
+
+$q2 = query("SELECT * FROM posts WHERE ReplyingTo='".$thread["PostID"]."'");
+$q3 = query("SELECT * FROM likes WHERE PostID='".$thread["PostID"]."'");
+
 
 
 ?>
@@ -30,7 +35,7 @@ $following = query("SELECT * FROM following WHERE Following='$userID'");
 </head>
 
 <body class="h-full">
-
+    <input type="hidden" name="thread" id="thread" value="<?php echo $threadID; ?>">
     <div class="min-h-full">
         <div class="sticky top-0"><?php include './../ui/navbar.php' ?></div>
 
@@ -51,13 +56,13 @@ $following = query("SELECT * FROM following WHERE Following='$userID'");
                     <a href="">
                         <img class="w-auto h-12 rounded-full" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="Rounded avatar">
                         <div class="grid">
-                            <h6 class="font-bold mb-1">Name</h6>
-                            <p>Video provides a powerful way to help you prove your point. When you click Online Video, you can paste in the embed code for the video you want to add. You can also type a keyword to search online for the video that best fits your document. To make your document look professionally produced, Word provides header, footer, cover page, and text box designs that complement each other. For example, you can add a matching cover page, header, and sidebar.</p>
+                            <h6 class="font-bold mb-1"><?php echo $authorName; ?></h6>
+                            <p><?php echo $thread["Body"]; ?></p>
                             <div class="grid grid-cols-4 mt-2">
-                                <a href="like" class="inline-flex gap-1"><img src="./../resources/icon_like.svg" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"></img><span class="gap-2">123</span></a>
+                                <a href="like" class="inline-flex gap-1"><img src="./../resources/icon_like.svg" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"></img><span class="gap-2"><?php echo numrows($q2) ;?></span></a>
                                 <a href="edit" class="inline-flex gap-1"><img src="./../resources/icon_edit.svg" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"></img></a>
                                 <a href="trash" class="inline-flex gap-1"><img src="./../resources/icon_delete.svg" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"></img></a>
-                                <a href="comment" class="inline-flex gap-1"><img src="./../resources/icon_comment.svg" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"></img><span class="gap-2">123</span></a>
+                                <a href="comment" class="inline-flex gap-1"><img src="./../resources/icon_comment.svg" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"></img><span class="gap-2"><?php echo numrows($q3) ;?></span></a>
                             </div>
                         </div>
                     </a>
@@ -78,19 +83,9 @@ $following = query("SELECT * FROM following WHERE Following='$userID'");
                 </div>
 
                 <!-- REPLIES -->
-                <div class="bg-white flex gap-4 mx-4 mt-8">
-                    <a href="">
-                        <img class="w-auto h-12 rounded-full" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="Rounded avatar">
-                        <div class="grid">
-                            <h6 class="font-bold mb-1">Name</h6>
-                            <p>Video provides a powerful way to help you prove your point. When you click Online Video, you can paste in the embed code for the video you want to add. You can also type a keyword to search online for the video that best fits your document. To make your document look professionally produced, Word provides header, footer, cover page, and text box designs that complement each other. For example, you can add a matching cover page, header, and sidebar.</p>
-                            <div class="grid grid-cols-4 mt-2">
-                                <a href="like" class="inline-flex gap-1"><img src="./../resources/icon_like.svg" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"></img><span class="gap-2">123</span></a>
-                            </div>
-                        </div>
-                    </a>
+                <div  id="replycontainer">
+                    
                 </div>
-
             </div>
         </main>
 

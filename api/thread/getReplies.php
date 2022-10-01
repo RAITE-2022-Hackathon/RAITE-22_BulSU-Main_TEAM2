@@ -2,9 +2,9 @@
     require_once __DIR__ . "/../database.php";
     require_once __DIR__ . "/../session.php";
     
-    if ( isset($_GET["userID"]) ){
-        $userID = sanitize($_GET["userID"]);
-        $q = query("SELECT * FROM posts WHERE AccountID='$userID' AND ReplyingTo IS NULL ORDER BY DatePosted DESC");
+    if ( isset($_GET["threadID"]) ){
+        $threadID = sanitize($_GET["threadID"]);
+        $q = query("SELECT * FROM posts WHERE ReplyingTo='$threadID' ORDER BY DatePosted DESC");
         $toRet = array();
 
         while($res = fetch($q)){
@@ -12,6 +12,8 @@
             //get the likesd
             $q2 = query("SELECT * FROM posts WHERE ReplyingTo='".$res["PostID"]."'");
             $q3 = query("SELECT * FROM likes WHERE PostID='".$res["PostID"]."'");
+            //Get author ID
+            $q4 = query
             array_push($toRet, array(
                 $res["PostID"],
                 $res["AccountID"],
