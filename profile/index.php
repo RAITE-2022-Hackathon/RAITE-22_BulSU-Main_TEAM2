@@ -16,7 +16,7 @@
     
     ?>
 <!DOCTYPE html>
-<html lang="en" class="h-full bg-gray-100">
+<html lang="en" class="h-full">
 
 <head>
     <meta charset="UTF-8">
@@ -33,7 +33,7 @@
         <div class="sticky top-0"><?php include './../ui/navbar.php' ?></div>
 
         <!-- SECTION HEADER -->
-        <header class="bg-white shadow">
+        <header class="bg-white py-8 border-b">
             <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                 <img class="w-24 h-24 rounded-full" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="Rounded avatar">
                 <div class="flex justify-between">
@@ -55,11 +55,28 @@
         <!-- CONTENT AREA -->
         <main>
             <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-                <div class="px-4 py-4 sm:px-0">
-                    <div class="border-4 border-dashed border-gray-200 rounded-lg h-96">ASDADADA</div>
+                <div class="px-4 py-4 mt-4 sm:px-0 flex-row border-b">
+                    <div class="bg-white flex gap-4">
+                        <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="Rounded avatar">
+                        <textarea class="flex-grow border-0 overflow-y-auto text-lg" placeholder="What's on your mind"></textarea>
+                    </div>
+                    <div class="flex  flex-row-reverse w-auto">
+                        <button class="py-2 px-4 text-md rounded text-white bg-purple-600 hover:bg-purple-700 fo cus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-50">Post</button>
+                    </div>
+                </div>
+                <div class="bg-white flex gap-4">
+                        <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="Rounded avatar">
+                        <div>
+                            <h6 class="font-bold mb-1">Name</h6>
+                            <p>Video provides a powerful way to help you prove your point. When you click Online Video, you can paste in the embed code for the video you want to add. You can also type a keyword to search online for the video that best fits your document. To make your document look professionally produced, Word provides header, footer, cover page, and text box designs that complement each other. For example, you can add a matching cover page, header, and sidebar.</p>
+                            <div class="grid grid-cols-4">
+                                
+                            </div>
+                        </div>
                 </div>
             </div>
         </main>
+
     </div>
 
 </body>
