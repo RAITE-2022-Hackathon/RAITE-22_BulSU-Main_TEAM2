@@ -1,0 +1,7 @@
+CREATE TABLE users(
+    AccountID int PRIMARY KEY AUTO_INCREMENT,
+    Username text,
+    Password text,
+    Email text,
+    Bio text
+    )
