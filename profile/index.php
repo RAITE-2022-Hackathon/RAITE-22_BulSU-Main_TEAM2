@@ -43,7 +43,7 @@
                     <h1 class="text-3xl font-bold leading-tight text-gray-900 mt-4"><?php echo $user["Username"]; ?></h1>
                     <?php if(strcmp($_SESSION["AccountID"],$user["AccountID"])!=0){
                         //Check if finafollow ni visitor si user
-                        $q = 
+                        //$q = 
                         echo '<button class="py-2 px-4 text-md rounded border text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-50">Follow</button>';
                     }
                     ?>
