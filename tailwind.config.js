@@ -7,7 +7,8 @@ module.exports = {
     './auth/*.php',
     './profile/*.php',
     './dashboard/*.php',
-    './discussion/*.php'
+    './discussion/*.php',
+    './ui/*.php'
   ],
   theme: {
     extend: {
