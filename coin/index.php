@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <link rel="stylesheet" href="./../styles/app.css">
     <title>Document</title>
+    <script src="./../scripts/nav.js"></script>
 </head>
 
 <body class="h-full">

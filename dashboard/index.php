@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <link rel="stylesheet" href="./../styles/app.css">
     <title>Document</title>
+    <script src="./../scripts/nav.js"></script>
 </head>
 
 <body class="h-full">
@@ -15,8 +16,6 @@
     <main>
 
         <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-
-            <!-- This example requires Tailwind CSS v2.0+ -->
             <div>
                 <h3 class="text-lg leading-6 font-medium text-gray-900">Hello, User</h3>
 
