@@ -20,7 +20,7 @@
                     <h2 class="mt-6 text-3xl font-extrabold text-gray-900">Welcome back</h2>
                     <p class="mt-2 text-sm text-gray-600">
                         Don't have an account yet?
-                        <a href="#" class="font-medium text-purple-600 hover:text-purple-500">Create an account</a>
+                        <a href="#" id="auth-gotoRegister" class="font-medium text-purple-600 hover:text-purple-500">Create an account</a>
                     </p>
                 </div>
             </div>
@@ -61,7 +61,7 @@
                     <h2 class="mt-6 text-3xl font-extrabold text-gray-900">Create an account</h2>
                     <p class="mt-2 text-sm text-gray-600">
                         Already have an account?
-                        <a href="#" class="font-medium text-purple-600 hover:text-purple-500">Sign in</a>
+                        <a href="#" id="auth-gotoLogin" class="font-medium text-purple-600 hover:text-purple-500">Sign in</a>
                     </p>
                 </div>
             </div>
@@ -111,6 +111,6 @@
 </body>
 
 <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-<script src="./../scripts/"></script>
+<script src="./../scripts/auth.js"></script>
 
 </html>
