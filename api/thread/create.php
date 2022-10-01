@@ -4,8 +4,9 @@
     
     if ( isset($_POST["newThread"]) ){
         $AccountID = 2;
-        $body = sanitize($_POST["body"]);
+        $body = sanitize($_POST["postbody"]);
         query("INSERT INTO posts(AccountID, Body) VALUES('$AccountID','$body')");
+        
         return http_response_code(200);
     }
 
