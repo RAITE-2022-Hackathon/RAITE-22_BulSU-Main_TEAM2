@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full bg-gray-100">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,17 +8,8 @@
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <link rel="stylesheet" href="./../styles/app.css">
 </head>
-<body>
+<body class="h-full">
     
-<!-- This example requires Tailwind CSS v2.0+ -->
-<!--
-  This example requires updating your template:
-
-  ```
-  <html class="h-full bg-gray-100">
-  <body class="h-full">
-  ```
--->
 <div class="min-h-full">
   <nav class="bg-purple-600">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -29,12 +20,8 @@
           </div>
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
-              <!-- Current: "bg-purple-700 text-white", Default: "text-white hover:bg-purple-500 hover:bg-opacity-75" -->
               <a href="#" class="bg-purple-700 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Dashboard</a>
               <a href="#" class="text-white hover:bg-purple-500 hover:bg-opacity-75 px-3 py-2 rounded-md text-sm font-medium">Team</a>
-              <a href="#" class="text-white hover:bg-purple-500 hover:bg-opacity-75 px-3 py-2 rounded-md text-sm font-medium">Projects</a>
-              <a href="#" class="text-white hover:bg-purple-500 hover:bg-opacity-75 px-3 py-2 rounded-md text-sm font-medium">Calendar</a>
-              <a href="#" class="text-white hover:bg-purple-500 hover:bg-opacity-75 px-3 py-2 rounded-md text-sm font-medium">Reports</a>
             </div>
           </div>
         </div>

@@ -76,6 +76,7 @@
                         <div class="mt-1">
                             <input id="auth-register-email" name="auth-register-email" type="email" autocomplete="off" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm">
                         </div>
+                        <p class="mt-2 text-sm text-red-600 dark:text-red-500">Text</p>
                     </div>
                     <!-- CODE INPUT -->
                     <div>
@@ -83,6 +84,7 @@
                         <div class="mt-1">
                             <input id="auth-register-code" name="auth-register-code" type="text" autocomplete="off" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm">
                         </div>
+                        <p class="mt-2 text-sm text-red-600 dark:text-red-500">Text</p>
                         <button id="auth-btn-verifyRegister" class="bg-purple-500 p-2">Send Code</button>
                     </div>
                     <!-- USERNAME INPUT -->
@@ -91,6 +93,7 @@
                         <div class="mt-1">
                             <input id="auth-register-username" name="auth-register-username" type="text" autocomplete="off" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm">
                         </div>
+                        <p class="mt-2 text-sm text-red-600 dark:text-red-500">Text</p>
                     </div>
                     <!-- PASSWORD INPUT -->
                     <div class="space-y-1">
@@ -98,6 +101,7 @@
                         <div class="mt-1">
                             <input id="auth-register-password" name="auth-register-password" type="password" autocomplete="off" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm">
                         </div>
+                        <p class="mt-2 text-sm text-red-600 dark:text-red-500">Text</p>
                     </div>
                     <!-- CONFIRM PASSWORD INPUT -->
                     <div class="space-y-1">
@@ -105,6 +109,7 @@
                         <div class="mt-1">
                             <input id="auth-register-confirmPassword" name="auth-register-password" type="password" autocomplete="off" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm">
                         </div>
+                        <p class="mt-2 text-sm text-red-600 dark:text-red-500">Text</p>
                     </div>
                     <!-- RESGISTER BUTTON -->
                     <div>
