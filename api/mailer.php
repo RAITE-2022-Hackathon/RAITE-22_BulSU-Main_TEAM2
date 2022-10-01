@@ -1,5 +1,6 @@
 <?php
     use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
     $EMAIL = "ecoin.testapp@gmail.com";
     $PASS = "vtzjkasjzejkuttk";
@@ -9,12 +10,13 @@
     require_once __DIR__. "/user/generate2FA.php";
 
     function Registration2FA($clientEmail){
+        global $EMAIL, $PASS;
         $mail = new PHPMailer(true);
         try {
         //Server settings
         $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
         $mail->isSMTP();                                            //Send using SMTP
-        $mail->Host       = 'smtp.google.com';                     //Set the SMTP server to send through
+        $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
         $mail->Username   = $EMAIL;                     //SMTP username
         $mail->Password   = $PASS;                               //SMTP password
@@ -37,4 +39,5 @@
             return http_response_code(400);
         }
     }
+    Registration2FA("charlesjason.garcia.m@bulsu.edu.ph");
 ?>
