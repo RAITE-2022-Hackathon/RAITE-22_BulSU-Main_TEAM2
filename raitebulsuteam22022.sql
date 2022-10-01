@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 01, 2022 at 08:43 AM
+-- Generation Time: Oct 01, 2022 at 10:14 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -31,15 +31,6 @@ CREATE TABLE `following` (
   `User` int(11) NOT NULL,
   `Following` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `following`
---
-
-INSERT INTO `following` (`User`, `Following`) VALUES
-(2, 1),
-(2, 3),
-(3, 2);
 
 -- --------------------------------------------------------
 
@@ -90,7 +81,12 @@ INSERT INTO `posts` (`PostID`, `ReplyingTo`, `AccountID`, `DatePosted`, `Body`) 
 (25, NULL, 2, '2022-10-01 05:54:22', 'Mark and Jason Dashboard'),
 (26, 16, 2, '2022-10-01 06:34:11', ''),
 (27, 16, 2, '2022-10-01 06:34:41', 'hehiihi'),
-(28, 16, 2, '2022-10-01 06:34:48', '23452345');
+(28, 16, 2, '2022-10-01 06:34:48', '23452345'),
+(29, NULL, 4, '2022-10-01 07:20:56', 'Hello po'),
+(30, NULL, 5, '2022-10-01 07:25:56', 'helo'),
+(31, 30, 4, '2022-10-01 07:26:05', 'hi'),
+(32, 30, 4, '2022-10-01 07:49:40', 'mosta po'),
+(33, 29, 4, '2022-10-01 07:55:47', 'hi');
 
 -- --------------------------------------------------------
 
@@ -106,6 +102,14 @@ CREATE TABLE `users` (
   `Bio` text DEFAULT NULL,
   `JoinDate` date DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`AccountID`, `Username`, `Password`, `Email`, `Bio`, `JoinDate`) VALUES
+(4, 'jason', 'asd', 'charlesjason.garcia.m@bulsu.edu.ph', NULL, '2022-10-01'),
+(5, 'mark', 'asd', 'asda@gmail.com', NULL, '2022-10-01');
 
 --
 -- Indexes for dumped tables
@@ -131,13 +135,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `PostID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `PostID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `AccountID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `AccountID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

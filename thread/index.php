@@ -6,7 +6,6 @@ if (!isset($_GET["id"]))
 $threadID = sanitize($_GET["id"]);
 if (strlen($threadID) == 0)
     die("Thread not defined.");
-
 $thread = query("SELECT * FROM posts WHERE PostID='$threadID'");
 if (numrows($thread) == 0)
     die("Thread not found.");
