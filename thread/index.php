@@ -32,6 +32,7 @@ $q3 = query("SELECT * FROM likes WHERE PostID='".$thread["PostID"]."'");
     <link rel="stylesheet" href="./../styles/app.css">
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script src="./../scripts/threadIndex.js"></script>
+    <script src="./../scripts/nav.js"></script>
 </head>
 
 <body class="h-full">
