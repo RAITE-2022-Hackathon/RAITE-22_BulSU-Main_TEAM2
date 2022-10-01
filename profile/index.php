@@ -47,8 +47,9 @@
                         echo '<button class="py-2 px-4 text-md rounded border text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-50">Follow</button>';
                     }
                     ?>
+                    <button class="py-2 px-4 text-md rounded border text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-50">Follow</button>
                 </div>
-                <p class="mt-8"><?php echo $user["Bio"]; ?></p>
+                <p class="mt-8 w-full"><?php echo $user["Bio"]; ?></p>
                 <div class="mt-4 flex gap-1">
                     <img src="./../resources/icon_calendar.svg" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"></img>
                     <p class="flex-1">Joined <?php echo (new DateTime($user["JoinDate"]))->format("M Y") ?></p>
@@ -64,6 +65,7 @@
         <main>
             
             <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+<<<<<<< HEAD
                 <?php
                     if(strcmp($_SESSION["AccountID"],$user["AccountID"])==0){
                         echo '<div class="px-4 py-4 mt-4 sm:px-0 flex-row border-b">
@@ -79,6 +81,20 @@
                     </div>';
                     }
                 ?>
+=======
+                <div class="px-4 py-4 mt-4 sm:px-0 flex-row border-b">
+                    <form id="postThread" method="POST">
+                        <input type="hidden" name="newThread" value="1" />
+                        <div class="bg-white flex gap-4">
+                            <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="Rounded avatar">
+                            <textarea id="postbody" required name="postbody" class="flex-grow border-0 overflow-y-auto text-lg" placeholder="What's on your mind"></textarea>
+                        </div>
+                        <div class="flex  flex-row-reverse w-auto">
+                            <button id="postButton" type="submit" class="py-2 px-4 text-md rounded text-white bg-blue-600 hover:bg-blue-700 fo cus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-50">Post</button>
+                        </div>
+                    </form>
+                </div>
+>>>>>>> c24e915a1c592e3d45bbe59e26ecddaa493b4c33
                 <!--asdasd-->
                 <div id="postcontainer">
                 </div>
