@@ -4,7 +4,10 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   content: [
     './*.php',
-    './auth/*.php'
+    './auth/*.php',
+    './profile/*.php',
+    './dashboard/*.php',
+    './discussion/*.php'
   ],
   theme: {
     extend: {
