@@ -17,7 +17,7 @@
     }
     function numrows($q){
         global $con;
-        return mysqli_num_rows($con, $q);
+        return mysqli_num_rows($q);
     }
     function sanitize($q){
         global $con;

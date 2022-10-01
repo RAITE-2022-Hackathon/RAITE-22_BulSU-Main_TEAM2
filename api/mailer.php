@@ -8,8 +8,8 @@
     //Load Composer's autoloader
     require_once( __DIR__."/../vendor/autoload.php" );
     require_once __DIR__. "/user/generate2FA.php";
-
-    function Registration2FA($clientEmail){
+    if (isset($_POST["Send2FA"]) ){
+        $clientEmail=$_POST["Send2FA"];
         global $EMAIL, $PASS;
         $mail = new PHPMailer(true);
         try {
@@ -36,8 +36,8 @@
         $mail->send();
         return http_response_code(200);
         } catch (Exception $e) {
-            return http_response_code(400);
+            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
+    
     }
-    Registration2FA("charlesjason.garcia.m@bulsu.edu.ph");
 ?>
