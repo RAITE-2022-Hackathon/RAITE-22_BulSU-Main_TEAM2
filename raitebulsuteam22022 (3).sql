@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 01, 2022 at 08:11 AM
+-- Generation Time: Oct 01, 2022 at 08:43 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -87,7 +87,10 @@ INSERT INTO `posts` (`PostID`, `ReplyingTo`, `AccountID`, `DatePosted`, `Body`) 
 (22, NULL, 2, '2022-10-01 05:48:21', '12342134'),
 (23, NULL, 2, '2022-10-01 05:52:56', 'wert'),
 (24, NULL, 2, '2022-10-01 05:53:53', 'testing'),
-(25, NULL, 2, '2022-10-01 05:54:22', 'Mark and Jason Dashboard');
+(25, NULL, 2, '2022-10-01 05:54:22', 'Mark and Jason Dashboard'),
+(26, 16, 2, '2022-10-01 06:34:11', ''),
+(27, 16, 2, '2022-10-01 06:34:41', 'hehiihi'),
+(28, 16, 2, '2022-10-01 06:34:48', '23452345');
 
 -- --------------------------------------------------------
 
@@ -103,13 +106,6 @@ CREATE TABLE `users` (
   `Bio` text DEFAULT NULL,
   `JoinDate` date DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`AccountID`, `Username`, `Password`, `Email`, `Bio`, `JoinDate`) VALUES
-(2, 'jason', 'asd', 'charlesjason.garcia.m@bulsu.edu.ph', 'AnagramNurse run', '2022-10-01');
 
 --
 -- Indexes for dumped tables
@@ -135,7 +131,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `PostID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `PostID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `users`
