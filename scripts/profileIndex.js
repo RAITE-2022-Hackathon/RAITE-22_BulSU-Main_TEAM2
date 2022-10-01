@@ -25,7 +25,6 @@ $(document).ready(function(){
         let body = $("#postbody")
         canSubmit=false
         btn.html("Posting...")
-        alert("postbody="+encodeURI(body.val())+"&newThread=1")
         let formData = new FormData(this)
         $.ajax({
             url:"../api/thread/create.php",

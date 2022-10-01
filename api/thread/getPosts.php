@@ -4,7 +4,7 @@
     
     if ( isset($_GET["userID"]) ){
         $userID = sanitize($_GET["userID"]);
-        $q = query("SELECT * FROM posts WHERE AccountID='$userID' AND ReplyingTo IS NULL");
+        $q = query("SELECT * FROM posts WHERE AccountID='$userID' AND ReplyingTo IS NULL ORDER BY DatePosted DESC");
         $toRet = array();
 
         while($res = fetch($q)){

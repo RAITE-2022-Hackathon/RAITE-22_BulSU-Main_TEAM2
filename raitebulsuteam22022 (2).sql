@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 01, 2022 at 06:38 AM
+-- Generation Time: Oct 01, 2022 at 08:11 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -44,6 +44,24 @@ INSERT INTO `following` (`User`, `Following`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `likes`
+--
+
+CREATE TABLE `likes` (
+  `AccountID` int(11) NOT NULL,
+  `PostID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `likes`
+--
+
+INSERT INTO `likes` (`AccountID`, `PostID`) VALUES
+(1, 16);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `posts`
 --
 
@@ -52,7 +70,7 @@ CREATE TABLE `posts` (
   `ReplyingTo` int(11) DEFAULT NULL,
   `AccountID` int(11) NOT NULL,
   `DatePosted` timestamp NOT NULL DEFAULT current_timestamp(),
-  `Body` text DEFAULT NULL
+  `Body` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -60,7 +78,16 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`PostID`, `ReplyingTo`, `AccountID`, `DatePosted`, `Body`) VALUES
-(1, NULL, 1, '2022-10-01 04:37:20', '');
+(16, NULL, 2, '2022-10-01 05:10:05', 'sadf'),
+(17, NULL, 2, '2022-10-01 05:11:18', 'sadfasdgrg'),
+(18, 16, 2, '2022-10-01 05:22:05', 'hehe'),
+(19, 16, 2, '2022-10-01 05:22:11', 'hehi'),
+(20, NULL, 2, '2022-10-01 05:47:06', 'KNADFSDJKJGJDGHdfskglhsddfh d ghx zsf z fsnz snfd fh dfh df df hdf hd dfxh df '),
+(21, NULL, 2, '2022-10-01 05:48:11', 'sadfadfs'),
+(22, NULL, 2, '2022-10-01 05:48:21', '12342134'),
+(23, NULL, 2, '2022-10-01 05:52:56', 'wert'),
+(24, NULL, 2, '2022-10-01 05:53:53', 'testing'),
+(25, NULL, 2, '2022-10-01 05:54:22', 'Mark and Jason Dashboard');
 
 -- --------------------------------------------------------
 
@@ -108,7 +135,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `PostID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `PostID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `users`
