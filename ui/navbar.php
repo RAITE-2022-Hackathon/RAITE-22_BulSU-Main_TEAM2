@@ -1,3 +1,7 @@
+<?php
+require_once "../api/database.php";
+require_once "../api/session.php";
+?>
 <nav class="bg-blue-600">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">

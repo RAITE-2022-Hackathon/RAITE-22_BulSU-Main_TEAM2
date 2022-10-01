@@ -6,7 +6,6 @@ if (!isset($_GET["id"]))
 $threadID = sanitize($_GET["id"]);
 if (strlen($threadID) == 0)
     die("Thread not defined.");
-
 $thread = query("SELECT * FROM posts WHERE PostID='$threadID'");
 if (numrows($thread) == 0)
     die("Thread not found.");
@@ -58,10 +57,10 @@ $q3 = query("SELECT * FROM likes WHERE PostID='".$thread["PostID"]."'");
                             <h6 class="font-bold mb-1"><?php echo $authorName; ?></h6>
                             <p><?php echo $thread["Body"]; ?></p>
                             <div class="grid grid-cols-4 mt-2">
-                                <a href="like" class="inline-flex gap-1"><img src="./../resources/icon_like.svg" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"></img><span class="gap-2"><?php echo numrows($q2) ;?></span></a>
+                                <a href="like" class="inline-flex gap-1"><img src="./../resources/icon_like.svg" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"></img><span class="gap-2"><?php echo numrows($q3) ;?></span></a>
                                 <a href="edit" class="inline-flex gap-1"><img src="./../resources/icon_edit.svg" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"></img></a>
                                 <a href="trash" class="inline-flex gap-1"><img src="./../resources/icon_delete.svg" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"></img></a>
-                                <a href="comment" class="inline-flex gap-1"><img src="./../resources/icon_comment.svg" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"></img><span class="gap-2"><?php echo numrows($q3) ;?></span></a>
+                                <a href="comment" class="inline-flex gap-1"><img src="./../resources/icon_comment.svg" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"></img><span class="gap-2"><?php echo numrows($q2) ;?></span></a>
                             </div>
                         </div>
                     </a>
