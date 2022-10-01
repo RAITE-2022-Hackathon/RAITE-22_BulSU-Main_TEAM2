@@ -32,7 +32,7 @@
             </div>
             <!-- LOGIN INPUT -->
             <div class="mt-6">
-                <form action="#" method="POST" class="space-y-6">
+                <form id="login" method="POST" class="space-y-6">
                     <!-- USERNAME INPUT -->
                     <div>
                         <label for="auth-login-username" class="block text-sm font-medium text-gray-700"> Email address </label>
@@ -73,7 +73,7 @@
             </div>
             <!-- REGISTRATION INPUT -->
             <div class="mt-6">
-                <form action="#" method="POST" class="space-y-6">
+                <form id="register" method="POST" class="space-y-6">
                     <!-- EMAIL INPUT -->
                     <div>
                         <label for="auth-register-email" class="block text-sm font-medium text-gray-700"> Email address </label>
