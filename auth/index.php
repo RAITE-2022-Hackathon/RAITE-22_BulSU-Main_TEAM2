@@ -55,6 +55,7 @@
                 </form>
             </div>
         </div>
+
         <!-- REGISTER FORM -->
         <div id="auth-view-gotoRegister" class="hidden flex-1 flex flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
             <div class="mx-auto w-full max-w-sm lg:w-96">
@@ -122,11 +123,14 @@
                 </form>
             </div>
         </div>
+        <div class="hidden lg:block relative w-0 flex-1 bg-blue-900">
+            <div class="self-center w-auto flex h-screen">
+                <img class="h-96 m-auto w-auto align-middle " src="./../resources/illustration_landing.svg">
+            </div>
+        </div>
     </div>
     </div>
-    <div class="hidden lg:block relative w-0 flex-1">
-        aaaaa
-    </div>
+
 </body>
 
 
