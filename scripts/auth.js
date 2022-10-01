@@ -1,14 +1,16 @@
-let auth_gotoLogin = document.getElementById("auth-btn-gotoLogin");
-let auth_gotoRegister = document.getElementById("auth-btn-gotoRegister");
+$(document).ready(function(){
+    let auth_gotoLogin = $("#auth-view-gotoLogin");
+    let auth_gotoRegister = $("#auth-view-gotoRegister");
 
-auth_gotoLogin.onclick = function () {
-    auth_gotoRegister.classList.add("hidden");
-    auth_gotoLogin.classList.remove("hidden");
-    console.log("go to login")
-}
+    $("#auth-gotoRegister").on('click',function (e) {
+        e.preventDefault()
+        $(auth_gotoRegister).removeClass("hidden");
+        $(auth_gotoLogin).addClass("hidden");
+    })
 
-auth_gotoRegister.onclick = function () {
-    auth_gotoRegister.classList.remove("hidden");
-    auth_gotoLogin.classList.add("hidden");
-    console.log("go to register")
-}
+    $("#auth-gotoLogin").on('click',function (e) {
+        e.preventDefault()
+        $(auth_gotoRegister).addClass("hidden");
+        $(auth_gotoLogin).removeClass("hidden");
+    })
+})
