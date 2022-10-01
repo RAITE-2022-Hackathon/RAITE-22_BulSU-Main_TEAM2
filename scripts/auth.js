@@ -33,14 +33,6 @@ $(document).ready(function(){
     })
     $("#auth-register-email").on('input',function(){
         $("#auth-register-code").val("")
-        $.ajax({
-            url:"../api/user/reset2FA.php",
-            type:"POST",
-            data:"reset2FA=true",
-            processData:false,
-            contentType:false,
-            cache:false,
-        })
     })
     $("#register").on('submit', function(e){
         e.preventDefault()
