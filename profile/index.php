@@ -43,8 +43,11 @@
                     <h1 class="text-3xl font-bold leading-tight text-gray-900 mt-4"><?php echo $user["Username"]; ?></h1>
                     <?php if(strcmp($_SESSION["AccountID"],$user["AccountID"])!=0){
                         //Check if finafollow ni visitor si user
-                        //$q = 
-                        echo '<button class="py-2 px-4 text-md rounded border text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-50">Follow</button>';
+                        $q = query("SELECT * FROM following WHERE User='".$_SESSION["AccountID"]."' AND Following='".$user["AccountID"]."'");
+                        if( numrows($q) == 0 )
+                            echo '<button class="py-2 px-4 text-md rounded border text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-50">Follow</button>';
+                        else 
+                            echo '<button class="py-2 px-4 text-md rounded border text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-50">Following</button>';
                     }
                     ?>
                     
