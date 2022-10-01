@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <link rel="stylesheet" href="./styles/app.css">
-    
-
     <title>Document</title>
 </head>
 <body class="h-full">
