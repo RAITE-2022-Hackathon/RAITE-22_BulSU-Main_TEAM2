@@ -41,7 +41,12 @@
                 <img class="w-24 h-24 rounded-full" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="Rounded avatar">
                 <div class="flex justify-between">
                     <h1 class="text-3xl font-bold leading-tight text-gray-900 mt-4"><?php echo $user["Username"]; ?></h1>
-                    <button class="py-2 px-4 text-md rounded border text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-50">Follow</button>
+                    <?php if(strcmp($_SESSION["AccountID"],$user["AccountID"])!=0){
+                        //Check if finafollow ni visitor si user
+                        $q = 
+                        echo '<button class="py-2 px-4 text-md rounded border text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-50">Follow</button>';
+                    }
+                    ?>
                 </div>
                 <p class="mt-8"><?php echo $user["Bio"]; ?></p>
                 <div class="mt-4 flex gap-1">
@@ -49,8 +54,8 @@
                     <p class="flex-1">Joined <?php echo (new DateTime($user["JoinDate"]))->format("M Y") ?></p>
                 </div>
                 <div class="mt-2 gap-4 flex">
-                    <p class=""><span class="mr-1 font-semibold"><?php echo numrows($followers); ?></span>Followers</p>
-                    <p class=""><span class="mr-1 font-semibold"><?php echo numrows($following); ?></span>Following</p>
+                    <p class=""><span class="mr-1 font-semibold"><?php echo numrows($followers); ?></span>Following</p>
+                    <p class=""><span class="mr-1 font-semibold"><?php echo numrows($following); ?></span>Followers</p>
                 </div>
             </div>
         </header>
@@ -59,18 +64,21 @@
         <main>
             
             <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-                <div class="px-4 py-4 mt-4 sm:px-0 flex-row border-b">
-                    <form id="postThread" method="POST">
-                        <input type="hidden" name="newThread" value="1" />
-                        <div class="bg-white flex gap-4">
-                            <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="Rounded avatar">
-                            <textarea id="postbody" required name="postbody" class="flex-grow border-0 overflow-y-auto text-lg" placeholder="What's on your mind"></textarea>
-                        </div>
-                        <div class="flex  flex-row-reverse w-auto">
-                            <button id="postButton" type="submit" class="py-2 px-4 text-md rounded text-white bg-purple-600 hover:bg-purple-700 fo cus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-50">Post</button>
-                        </div>
-                    </form>
-                </div>
+                <?php
+                    if(strcmp($_SESSION["AccountID"],$user["AccountID"])==0){
+                        echo '<div class="px-4 py-4 mt-4 sm:px-0 flex-row border-b">
+                        <form id="postThread" method="POST">
+                            <input type="hidden" name="newThread" value="1" />
+                            <div class="bg-white flex gap-4">
+                                <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="Rounded avatar">
+                                <textarea id="postbody" required name="postbody" class="flex-grow border-0 overflow-y-auto text-lg" placeholder="What\'s on your mind"></textarea>
+                            </div><div class="flex  flex-row-reverse w-auto">
+                                <button id="postButton" type="submit" class="py-2 px-4 text-md rounded text-white bg-purple-600 hover:bg-purple-700 fo cus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-50">Post</button>
+                            </div>
+                        </form>
+                    </div>';
+                    }
+                ?>
                 <!--asdasd-->
                 <div id="postcontainer">
                 </div>

@@ -31,6 +31,7 @@
                 <form id="login" method="POST" class="space-y-6">
                     <!-- USERNAME INPUT -->
                     <div>
+                    <p id="loginRes" class="mt-2 text-sm text-red-600 dark:text-red-500"></p>
                         <label for="auth-login-username" class="block text-sm font-medium text-gray-700"> Email address </label>
                         <div class="mt-1">
                             <input id="auth-login-username" name="auth-login-username" type="email" autocomplete="off" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
@@ -86,8 +87,8 @@
                         <div class="flex">
                             <label for="location-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Your Email</label>
                             <div class="relative w-full">
-                                <input type="text" id="auth-register-code" class="block p-2.5 w-full z-20 text-sm text-gray-900 rounded-md shadow-sm  border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " required>
-                                <button id="auth-btn-verifyRegister" type="submit" class="absolute top-0 right-0 p-2.5 text-sm font-medium text-white bg-blue-700 rounded-r-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                <input type="text" name="auth-register-code" id="auth-register-code" class="block p-2.5 w-full z-20 text-sm text-gray-900 rounded-md shadow-sm  border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " required>
+                                <button id="auth-btn-verifyRegister" type="button" class="absolute top-0 right-0 p-2.5 text-sm font-medium text-white bg-blue-700 rounded-r-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                     Send Code
                                 </button>
                             </div>

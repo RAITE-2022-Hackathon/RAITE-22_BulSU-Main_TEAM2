@@ -7,7 +7,9 @@
     //Password: Password2022
     //Load Composer's autoloader
     require_once( __DIR__."/../vendor/autoload.php" );
+    require_once __DIR__. "/session.php";
     require_once __DIR__. "/user/generate2FA.php";
+    
     if (isset($_POST["Send2FA"]) ){
         $clientEmail=$_POST["Send2FA"];
         global $EMAIL, $PASS;

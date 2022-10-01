@@ -25,11 +25,18 @@
         if ( numrows($q)!=0 )
             return http_response_code(403);
         //Check if 2fa is correct
-        if ( strcmp($twofa, $_SESSION["2FA"])!==0 )
+        if ( strcmp($twofa, $_SESSION["2FA"])!==0 ){
+            echo $twofa;
+            echo $_SESSION["2FA"];
+            exit;
             return http_response_code(404);
+        }
         
         //Create the account if all passed
         query("INSERT INTO users(Username, Password, Email) VALUES('$user','$pass','$email')");
+        $q = fetch(query("SELECT AccountID FROM users WHERE Username='$user')"))["AccountID"];
+        //Set the session
+        $_SESSION["AccountID"] = $q;
         return http_response_code(200);
     }
 ?>

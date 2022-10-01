@@ -3,7 +3,7 @@
     require_once __DIR__ . "/../session.php";
     
     if ( isset($_POST["newThread"]) ){
-        $AccountID = 2;
+        $AccountID = $_SESSION["AccountID"];;
         $body = sanitize($_POST["postbody"]);
         query("INSERT INTO posts(AccountID, Body) VALUES('$AccountID','$body')");
         

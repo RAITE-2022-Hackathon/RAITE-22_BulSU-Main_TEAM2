@@ -69,4 +69,25 @@ $(document).ready(function(){
             }
         })
     })
+
+    $("#login").on('submit',function(e){
+        e.preventDefault()
+        let form = new FormData(this)
+        $.ajax({
+            url:"../api/user/login.php",
+            type:"POST",
+            data:form,
+            processData:false,
+            contentType:false,
+            cache:false,
+            statusCode:{
+                200:(e)=>{
+                    window.location.href="../dashboard"
+                },
+                404:(e)=>{
+                    $("#loginRes").text("Incorrect Credentials!")
+                },
+            }
+        })
+    })
 })
