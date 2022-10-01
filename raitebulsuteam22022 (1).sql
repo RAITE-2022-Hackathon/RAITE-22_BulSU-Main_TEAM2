@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 01, 2022 at 05:48 AM
+-- Generation Time: Oct 01, 2022 at 06:38 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -44,6 +44,27 @@ INSERT INTO `following` (`User`, `Following`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `posts`
+--
+
+CREATE TABLE `posts` (
+  `PostID` int(11) NOT NULL,
+  `ReplyingTo` int(11) DEFAULT NULL,
+  `AccountID` int(11) NOT NULL,
+  `DatePosted` timestamp NOT NULL DEFAULT current_timestamp(),
+  `Body` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `posts`
+--
+
+INSERT INTO `posts` (`PostID`, `ReplyingTo`, `AccountID`, `DatePosted`, `Body`) VALUES
+(1, NULL, 1, '2022-10-01 04:37:20', '');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -68,6 +89,12 @@ INSERT INTO `users` (`AccountID`, `Username`, `Password`, `Email`, `Bio`, `JoinD
 --
 
 --
+-- Indexes for table `posts`
+--
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`PostID`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -76,6 +103,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `posts`
+--
+ALTER TABLE `posts`
+  MODIFY `PostID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
