@@ -13,4 +13,6 @@ $(document).ready(function(){
         $(auth_gotoRegister).addClass("hidden");
         $(auth_gotoLogin).removeClass("hidden");
     })
+
+    $("#register").on('submit')
 })
