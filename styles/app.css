@@ -781,6 +781,10 @@ select {
   z-index: 20;
 }
 
+.z-50 {
+  z-index: 50;
+}
+
 .m-auto {
   margin: auto;
 }
@@ -1819,6 +1823,11 @@ select {
 .focus\:ring-white:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(255 255 255 / var(--tw-ring-opacity));
+}
+
+.focus\:ring-blue-50:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(239 246 255 / var(--tw-ring-opacity));
 }
 
 .focus\:ring-offset-2:focus {

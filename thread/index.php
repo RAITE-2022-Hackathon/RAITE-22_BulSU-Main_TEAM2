@@ -36,7 +36,7 @@ $q3 = query("SELECT * FROM likes WHERE PostID='".$thread["PostID"]."'");
 
 <body class="h-full">
     <div class="min-h-full">
-        <div class="sticky top-0"><?php include './../ui/navbar.php' ?></div>
+        <div class="sticky top-0 z-50"><?php include './../ui/navbar.php' ?></div>
 
         <!-- SECTION HEADER -->
         <header class="bg-white py-8 border-b">

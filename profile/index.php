@@ -41,9 +41,9 @@
                 <img class="w-24 h-24 rounded-full" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="Rounded avatar">
                 <div class="flex justify-between">
                     <h1 class="text-3xl font-bold leading-tight text-gray-900 mt-4"><?php echo $user["Username"]; ?></h1>
-                    <button class="py-2 px-4 text-md rounded border text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-50">Follow</button>
+                    <button class="py-2 px-4 text-md rounded border text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-50">Follow</button>
                 </div>
-                <p class="mt-8"><?php echo $user["Bio"]; ?></p>
+                <p class="mt-8 w-full"><?php echo $user["Bio"]; ?></p>
                 <div class="mt-4 flex gap-1">
                     <img src="./../resources/icon_calendar.svg" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"></img>
                     <p class="flex-1">Joined <?php echo (new DateTime($user["JoinDate"]))->format("M Y") ?></p>
@@ -67,7 +67,7 @@
                             <textarea id="postbody" required name="postbody" class="flex-grow border-0 overflow-y-auto text-lg" placeholder="What's on your mind"></textarea>
                         </div>
                         <div class="flex  flex-row-reverse w-auto">
-                            <button id="postButton" type="submit" class="py-2 px-4 text-md rounded text-white bg-purple-600 hover:bg-purple-700 fo cus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-50">Post</button>
+                            <button id="postButton" type="submit" class="py-2 px-4 text-md rounded text-white bg-blue-600 hover:bg-blue-700 fo cus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-50">Post</button>
                         </div>
                     </form>
                 </div>
